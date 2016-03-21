@@ -29,6 +29,7 @@ public final class TaskManConstant {
     public static final String KEY_PROJECTID = "Id";
     public static final String KEY_PROJECTNAME = "name";
     public static final String KEY_TOTALTIME = "totalTime";
+    public static final String KEY_CLIENTIDFK = "clientIdFK";
 
     //CLIENT Table - column names
     public static final String KEY_CLIENTID = "Id";
@@ -43,7 +44,7 @@ public final class TaskManConstant {
     public static final String KEY_TASKSTARTTIME = "startTime";
     public static final String KEY_TASKENDTIME = "endTime";
     public static final String KEY_TASKDURATION = "duration";
-
+    public static final String KEY_PROJECTIDFK = "projectIdFK";
 
     //REMINDER Table - column names
     public static final String KEY_REMINDERID = "Id";
@@ -55,10 +56,10 @@ public final class TaskManConstant {
     public static final String KEY_BILLINGRATE = "rate";
     public static final String KEY_BILLINGAMOUNT = "amount";
 
-
     //EXPENSE Table - column names
     public static final String KEY_EXPENSEID = "Id";
     public static final String KEY_EXPENSEDESCRIPTION = "description";
     public static final String KEY_EXPENSEAMOUNT = "amount";
+    public static final String KEY_TASKIDFK = "taskIdFK";
 
 }
