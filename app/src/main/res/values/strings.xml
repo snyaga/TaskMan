@@ -7,4 +7,5 @@
     <string name="title_activity_project_list">ProjectList</string>
     <string name="title_activity_task_view">TaskView</string>
     <string name="title_activity_new_project">NewProject</string>
+    <string name="title_activity_new_client">NewClient</string>
 </resources>

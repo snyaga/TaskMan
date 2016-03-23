@@ -1,6 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    >
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_projects"
+        android:title="@string/title_activity_new_project"
+        android:orderInCategory="1"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_projects_list"
+        android:title="@string/title_activity_project_list"
+        android:orderInCategory="2"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_task_list"
+        android:title="@string/title_activity_task_list"
+        android:orderInCategory="3"
+        app:showAsAction="never" />
 </menu>
