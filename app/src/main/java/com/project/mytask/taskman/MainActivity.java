@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         if (v.getId() == R.id.mainLoginButton) {
             startActivity(new Intent(this, Login.class));
         } else if (v.getId() == R.id.mainRegisterButton) {
-            startActivity(new Intent(this, ProjectList.class));
+            startActivity(new Intent(this, R.class));
         }
     }
 }

@@ -29,60 +29,67 @@ public class DBHelper extends SQLiteOpenHelper {
     //Table Create Statements
     //USER Table - Create Statement
     private static final String CREATE_TABLE_USER = "CREATE TABLE " + TaskManConstant.TABLE_USER + "("
-            + TaskManConstant.KEY_USERID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
-            + TaskManConstant.KEY_USERNAME + " TEXT NOT NULL,"
-            + TaskManConstant.KEY_USEREMAIL + " TEXT NOT NULL,"
-            + TaskManConstant.KEY_USERPASSWORD + " TEXT NOT NULL"
+            + TaskManConstant.KEY_USERID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+            + TaskManConstant.KEY_USERNAME + " TEXT NOT NULL, "
+            + TaskManConstant.KEY_USEREMAIL + " TEXT NOT NULL, "
+            + TaskManConstant.KEY_USERPASSWORD + " TEXT NOT NULL "
+            + ")";
+
+    //CLIENT Table - Create Statement
+    private static final String CREATE_TABLE_CLIENT = "CREATE TABLE " + TaskManConstant.TABLE_CLIENT + "("
+            + TaskManConstant.KEY_CLIENTID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+            + TaskManConstant.KEY_CLIENTNAME + " TEXT, "
+            +TaskManConstant.KEY_CLIENTEMAIL + " TEXT "
             + ")";
 
     //PROJECT Table - Create Statement
     private static final String CREATE_TABLE_PROJECT = "CREATE TABLE " + TaskManConstant.TABLE_PROJECT + "("
-            + TaskManConstant.KEY_PROJECTID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
-            + TaskManConstant.KEY_PROJECTNAME + " TEXT NOT NULL,"
-            + TaskManConstant.KEY_TOTALTIME + " INTEGER"
-            + TaskManConstant.KEY_CLIENTIDFK + " INTEGER FOREIGN KEY (" +TaskManConstant.KEY_CLIENTIDFK +") REFERENCES "
-            + TaskManConstant.TABLE_CLIENT + "(Id) " + ")";
-
-    //CLIENT Table - Create Statement
-    private static final String CREATE_TABLE_CLIENT = "CREATE TABLE "
-            + TaskManConstant.TABLE_CLIENT + "(" + TaskManConstant.KEY_CLIENTID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," + TaskManConstant.KEY_CLIENTNAME + " TEXT,"
-            +TaskManConstant.KEY_CLIENTEMAIL + " TEXT" + ")";
+            + TaskManConstant.KEY_PROJECTID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+            + TaskManConstant.KEY_PROJECTNAME + " TEXT NOT NULL, "
+            + TaskManConstant.KEY_TOTALTIME + " INTEGER, "
+            + TaskManConstant.KEY_CLIENTIDFK + " INTEGER," + "FOREIGN KEY (" +TaskManConstant.KEY_CLIENTIDFK +") REFERENCES "
+            + TaskManConstant.TABLE_CLIENT + "( Id )"
+            + ")";
 
     //TASK Table - Create Statement
     private static final String CREATE_TABLE_TASK = "CREATE TABLE " + TaskManConstant.TABLE_TASK + "("
-            + TaskManConstant.KEY_TASKID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
-            + TaskManConstant.KEY_TASKNAME + " TEXT,"
-            + TaskManConstant.KEY_TASKDESCRIPTION + " TEXT,"
-            + TaskManConstant.KEY_TASKDATE + " DATETIME,"
-            + TaskManConstant.KEY_TASKSTARTTIME + " DATETIME,"
-            + TaskManConstant.KEY_TASKENDTIME + " DATETIME,"
-            + TaskManConstant.KEY_TASKDURATION + " INTEGER"
-            + TaskManConstant.KEY_PROJECTIDFK + " INTEGER FOREIGN KEY (" +TaskManConstant.KEY_PROJECTIDFK +") REFERENCES "
-            + TaskManConstant.TABLE_PROJECT + "(Id) " + ")";
+            + TaskManConstant.KEY_TASKID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+            + TaskManConstant.KEY_TASKNAME + " TEXT, "
+            + TaskManConstant.KEY_TASKDESCRIPTION + " TEXT, "
+            + TaskManConstant.KEY_TASKDATE + " DATETIME, "
+            + TaskManConstant.KEY_TASKSTARTTIME + " DATETIME, "
+            + TaskManConstant.KEY_TASKENDTIME + " DATETIME, "
+            + TaskManConstant.KEY_TASKDURATION + " INTEGER, "
+            + TaskManConstant.KEY_PROJECTIDFK + " INTEGER," + "FOREIGN KEY (" +TaskManConstant.KEY_PROJECTIDFK +") REFERENCES "
+            + TaskManConstant.TABLE_PROJECT + "(Id) "
+            + ")";
 
     //REMINDER Table - Create Statement
     private static final String CREATE_TABLE_REMINDER = "CREATE TABLE " + TaskManConstant.TABLE_REMINDER + "("
-            + TaskManConstant.KEY_REMINDERID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
-            + TaskManConstant.KEY_REMINDERNAME + " TEXT,"
-            + TaskManConstant.KEY_REMINDERTIME + " DATETIME"
-            + TaskManConstant.KEY_TASKIDFK + " INTEGER FOREIGN KEY (" +TaskManConstant.KEY_TASKIDFK +") REFERENCES "
-            + TaskManConstant.TABLE_TASK + "(Id) " + ")";
+            + TaskManConstant.KEY_REMINDERID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+            + TaskManConstant.KEY_REMINDERNAME + " TEXT, "
+            + TaskManConstant.KEY_REMINDERTIME + " DATETIME, "
+            + TaskManConstant.KEY_TASKIDFK + " INTEGER," + "FOREIGN KEY (" +TaskManConstant.KEY_TASKIDFK +") REFERENCES "
+            + TaskManConstant.TABLE_TASK + "(Id) "
+            + ")";
 
     //BILLING Table - Create Statement
     private static final String CREATE_TABLE_BILLING = "CREATE TABLE " + TaskManConstant.TABLE_BILLING + "("
-            + TaskManConstant.KEY_BILLINGID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
-            + TaskManConstant.KEY_BILLINGRATE + " INTEGER,"
-            + TaskManConstant.KEY_BILLINGAMOUNT + " INTEGER"
-            + TaskManConstant.KEY_PROJECTIDFK + " INTEGER FOREIGN KEY (" +TaskManConstant.KEY_PROJECTIDFK +") REFERENCES "
-            + TaskManConstant.TABLE_PROJECT + "(Id) " + ")";
+            + TaskManConstant.KEY_BILLINGID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+            + TaskManConstant.KEY_BILLINGRATE + " INTEGER, "
+            + TaskManConstant.KEY_BILLINGAMOUNT + " INTEGER, "
+            + TaskManConstant.KEY_PROJECTIDFK + " INTEGER," + "FOREIGN KEY (" +TaskManConstant.KEY_PROJECTIDFK +") REFERENCES "
+            + TaskManConstant.TABLE_PROJECT + "(Id) "
+            + ")";
 
     //EXPENSE Table - Create Statement
     private static final String CREATE_TABLE_EXPENSE = "CREATE TABLE " + TaskManConstant.TABLE_EXPENSE + "("
-            + TaskManConstant.KEY_EXPENSEID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
-            + TaskManConstant.KEY_EXPENSEDESCRIPTION + " TEXT,"
-            + TaskManConstant.KEY_EXPENSEAMOUNT + " INTEGER"
-            + TaskManConstant.KEY_TASKIDFK + " INTEGER FOREIGN KEY (" +TaskManConstant.KEY_TASKIDFK +") REFERENCES "
-            + TaskManConstant.TABLE_TASK + "(Id) " + ")";
+            + TaskManConstant.KEY_EXPENSEID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+            + TaskManConstant.KEY_EXPENSEDESCRIPTION + " TEXT, "
+            + TaskManConstant.KEY_EXPENSEAMOUNT + " INTEGER, "
+            + TaskManConstant.KEY_TASKIDFK + " INTEGER," + "FOREIGN KEY (" +TaskManConstant.KEY_TASKIDFK +") REFERENCES "
+            + TaskManConstant.TABLE_TASK + "(Id) "
+            + ")";
 
     public DBHelper(Context context){
         super(context, TaskManConstant.DATABASE_NAME, null, TaskManConstant.DATABASE_VERSION);
@@ -138,7 +145,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public User getUser(long userId){
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String selectQuery = "SELECT * FROM " + TaskManConstant.TABLE_USER + "WHERE"
+        String selectQuery = "SELECT * FROM " + TaskManConstant.TABLE_USER + " WHERE "
                 + TaskManConstant.KEY_USERID + " = " +userId;
 
         Log.i(LOG, selectQuery);
@@ -159,7 +166,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     //Get all users
 
-    public List<User> getAllUsers() {
+    public Cursor getAllUsers() {
         List<User> users = new ArrayList<User>();
         String selectQuery = "SELECT * FROM " + TaskManConstant.TABLE_USER;
 
@@ -169,18 +176,20 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         //looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-                User user = new User();
-                user.setId(cursor.getInt(cursor.getColumnIndex(TaskManConstant.KEY_USERID)));
-                user.setName(cursor.getString(cursor.getColumnIndex(TaskManConstant.KEY_USERNAME)));
-                user.setEmail(cursor.getString(cursor.getColumnIndex(TaskManConstant.KEY_USEREMAIL)));
-                user.setPassword(cursor.getString(cursor.getColumnIndex(TaskManConstant.KEY_USERPASSWORD)));
+//        if (cursor.moveToFirst()) {
+//            do {
+//                User user = new User();
+//                user.setId(cursor.getInt(cursor.getColumnIndex(TaskManConstant.KEY_USERID)));
+//                user.setName(cursor.getString(cursor.getColumnIndex(TaskManConstant.KEY_USERNAME)));
+//                user.setEmail(cursor.getString(cursor.getColumnIndex(TaskManConstant.KEY_USEREMAIL)));
+//                user.setPassword(cursor.getString(cursor.getColumnIndex(TaskManConstant.KEY_USERPASSWORD)));
+//
+//                users.add(user);
+//                Log.i("Mydata1", String.valueOf(users));
+//            } while (cursor.moveToNext());
+//        }
 
-                users.add(user);
-            } while (cursor.moveToNext());
-        }
-        return users;
+        return cursor;
     }
 
     //Update single user
@@ -713,5 +722,9 @@ public class DBHelper extends SQLiteOpenHelper {
         if (db != null && db.isOpen())
             db.close();
     }
+
+
+
+
 
 }

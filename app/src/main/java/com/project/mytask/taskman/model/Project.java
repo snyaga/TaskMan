@@ -7,14 +7,16 @@ public class Project {
     int Id;
     String name;
     int totalTime;
+    int clientIdFK;
 
     public Project() {
     }
 
-    public Project(int Id, String name, int totalTime) {
+    public Project(int Id, String name, int totalTime, int clientIdFK) {
         this.Id = Id;
         this.name = name;
         this.totalTime = totalTime;
+        this.clientIdFK = clientIdFK;
     }
 
     public int getTotalTime() {
@@ -39,6 +41,14 @@ public class Project {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getClientIdFK() {
+        return clientIdFK;
+    }
+
+    public void setClientIdFK(int clientIdFK) {
+        this.clientIdFK = clientIdFK;
     }
 
     // Will be used by the ArrayAdapter in the ListView

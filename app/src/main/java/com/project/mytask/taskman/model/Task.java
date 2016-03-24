@@ -11,11 +11,12 @@ public class Task {
     int startTime;
     int endTime;
     int duration;
+    int projectIdFK;
 
     public Task(){
     }
 
-    public Task(int Id, String name, String description, int date, int startTime, int endTime, int duration){
+    public Task(int Id, String name, String description, int date, int startTime, int endTime, int duration, int projectIdFK){
         this.Id = Id;
         this.name = name;
         this.description = description;
@@ -23,6 +24,7 @@ public class Task {
         this.startTime = startTime;
         this.endTime = endTime;
         this.duration = duration;
+        this.projectIdFK = projectIdFK;
     }
 
     public int getDuration() {
@@ -79,6 +81,14 @@ public class Task {
 
     public void setEndTime(int endTime) {
         this.endTime = endTime;
+    }
+
+    public int getProjectIdFK() {
+        return projectIdFK;
+    }
+
+    public void setProjectIdFK(int projectIdFK) {
+        this.projectIdFK = projectIdFK;
     }
 }
 

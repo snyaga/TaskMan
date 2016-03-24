@@ -7,14 +7,16 @@ public class Expense {
     int Id;
     String description;
     int amount;
+    int taskIdFK;
 
     public Expense(){
     }
 
-    public Expense(int Id, String description, int amount){
+    public Expense(int Id, String description, int amount, int taskIdFK){
         this.Id = Id;
         this.description = description;
         this.amount = amount;
+        this.taskIdFK = taskIdFK;
     }
 
     public int getId() {
@@ -39,5 +41,13 @@ public class Expense {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getTaskIdFK() {
+        return taskIdFK;
+    }
+
+    public void setTaskIdFK(int taskIdFK) {
+        this.taskIdFK = taskIdFK;
     }
 }

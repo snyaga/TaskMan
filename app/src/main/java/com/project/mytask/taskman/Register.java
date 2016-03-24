@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,17 +46,18 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 User user = new User();
                 user.setId(0);
-                user.setName(registerUserName.toString());
-                user.setEmail(registerEmail.toString());
-                user.setPassword(registerPassword.toString());
+                user.setName(registerUserName.getText().toString());
+                user.setEmail(registerEmail.getText().toString());
+                user.setPassword(registerPassword.getText().toString());
+                Log.i("Myuser", String.valueOf(registerUserName.getText().toString()));
                 db.createUser(user);
 
                 db.getAllUsers();
                 //String usersList = db.getAllUsers().toString();
-                List<User> usersList = db.getAllUsers();
-                String string = "UserName: " + usersList.getClass().getName() + "\nEmail:  \n\n";
+//                List<User> usersList = db.getAllUsers();
+//                String string = "UserName: " + usersList.getClass().getName() + "\nEmail:  \n\n";
 
-                textViewUser.setText(string);
+//                textViewUser.setText(string);
 
 
             }

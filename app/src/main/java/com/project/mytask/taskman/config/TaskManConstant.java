@@ -25,16 +25,16 @@ public final class TaskManConstant {
     public static final String KEY_USEREMAIL = "email";
     public static final String KEY_USERPASSWORD = "password";
 
+    //CLIENT Table - column names
+    public static final String KEY_CLIENTID = "Id";
+    public static final String KEY_CLIENTNAME = "name";
+    public static final String KEY_CLIENTEMAIL = "email";
+
     //PROJECT Table - column names
     public static final String KEY_PROJECTID = "Id";
     public static final String KEY_PROJECTNAME = "name";
     public static final String KEY_TOTALTIME = "totalTime";
     public static final String KEY_CLIENTIDFK = "clientIdFK";
-
-    //CLIENT Table - column names
-    public static final String KEY_CLIENTID = "Id";
-    public static final String KEY_CLIENTNAME = "name";
-    public static final String KEY_CLIENTEMAIL = "email";
 
     //TASK Table - column names
     public static final String KEY_TASKID = "Id";
